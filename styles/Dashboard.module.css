@@ -1,0 +1,652 @@
+/* Dashboard.module.css */
+.container {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #283344;
+    position: relative;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  .dashboardContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .headerBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e1e5eb;
+  }
+  
+  .headerSection h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+    color: #d1dae3;
+  }
+  
+  .profileSection {
+    position: relative;
+  }
+  
+  .profileButton {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+  }
+  
+  .profileButton:hover {
+    background-color: #edf2f7;
+  }
+  
+  .profileAvatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #3498db;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profileDropdown {
+    position: absolute;
+    top: 56px;
+    right: 0;
+    width: 220px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    overflow: hidden;
+  }
+  
+  .profileDropdownItem {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+    color: #4a5568;
+    transition: background-color 0.2s;
+  }
+  
+  .profileDropdownItem:hover {
+    background-color: #f7fafc;
+    color: #3182ce;
+  }
+  
+  .dropdownIcon {
+    margin-right: 12px;
+    font-size: 18px;
+  }
+  
+  .dashboardContent {
+    background-color: rgb(246, 240, 240);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+  }
+  
+  .actionBar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px 20px;
+    background-color: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .createRideButton {
+    display: flex;
+    align-items: center;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .createRideButton:hover {
+    background-color: #2980b9;
+  }
+  
+  .actionIcon {
+    margin-right: 8px;
+  }
+  
+  .tabsContainer {
+    display: flex;
+    padding: 0 20px;
+    background-color: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .tabButton {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-weight: 1000;
+    font-family: 'Times New Roman', Times, serif;
+    color: #718096;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .tabButton:hover {
+    color: #4299e1;
+  }
+  
+  .activeTab {
+    color: #3182ce;
+    border-bottom: 2px solid #3182ce;
+  }
+  
+  .tabIcon {
+    margin-right: 8px;
+    font-size: 16px;
+  }
+  
+  .contentSection {
+    padding: 20px;
+    min-height: 400px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .loadingState, .emptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    color: #718096;
+  }
+  
+  .emptyStateIcon {
+    font-size: 40px;
+    margin-bottom: 16px;
+    color: #cbd5e0;
+  }
+  
+  .ridesContainer {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .ridesHeader {
+    display: flex;
+    background-color: #91c1e0;
+    padding: 12px 16px;
+    font-weight: 600;
+    color: #4a5568;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 15px;
+  }
+  
+  .rideRow {
+    display: flex;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e2e8f0;
+    transition: background-color 0.2s;
+  }
+  
+  .rideRow:last-child {
+    border-bottom: none;
+  }
+  
+  .rideRow:hover {
+    background-color: #f8fafc;
+  }
+  
+  .rideCol {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .rideColSmall {
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .statusBadge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  .statusPending {
+    background-color: #ebf5ff;
+    color: #3182ce;
+  }
+  
+  .statusConfirmed {
+    background-color: #e6fffa;
+    color: #38b2ac;
+  }
+  
+  .statusCompleted {
+    background-color: #f0fff4;
+    color: #48bb78;
+  }
+  
+  .statusCancelled {
+    background-color: #fff5f5;
+    color: #e53e3e;
+  }
+  
+  .joinRideBtn {
+    background-color: #38b2ac;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.2s;
+  }
+  
+  .joinRideBtn:hover {
+    background-color: #319795;
+  }
+  
+  /* Modal Styles */
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modalContainer {
+    background-color: white;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+  }
+  
+  .modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .modalTitle {
+    margin: 0;
+    font-size: 20px;
+    color: #2d3748;
+  }
+  
+  .closeButton {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #718096;
+  }
+  
+  .closeIcon {
+    font-size: 24px;
+  }
+  
+  .modalContent {
+    padding: 20px;
+  }
+  
+  .modalFooter {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px 20px;
+    border-top: 1px solid #e2e8f0;
+    gap: 10px;
+  }
+  
+  .formRow {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .formGroup {
+    flex: 1;
+    margin-bottom: 16px;
+  }
+  
+  /* Added missing styles */
+  .formLabel {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4a5568;
+  }
+  
+  .formIcon {
+    margin-right: 8px;
+    font-size: 16px;
+    color: #718096;
+  }
+  
+  .formInput, .formSelect, .formTextarea {
+    width: 80%;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+  }
+  
+  .formInput:focus, .formSelect:focus, .formTextarea:focus {
+    outline: none;
+    border-color: #3182ce;
+    box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.2);
+  }
+  
+  .formTextarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  
+  .errorMessage {
+    background-color: #fff5f5;
+    color: #e53e3e;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    border-left: 4px solid #e53e3e;
+  }
+  
+  .primaryButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .primaryButton:hover {
+    background-color: #2980b9;
+  }
+  
+  .secondaryButton {
+    background-color: #edf2f7;
+    color: #4a5568;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .secondaryButton:hover {
+    background-color: #e2e8f0;
+  }
+  
+  /* Access denied screen */
+  .accessDenied {
+    max-width: 500px;
+    margin: 100px auto;
+    text-align: center;
+    padding: 40px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  
+  .accessDenied h1 {
+    color: #2c3e50;
+    margin: 0 0 16px;
+  }
+  
+  .accessDenied p {
+    color: #718096;
+    margin-bottom: 24px;
+  }
+  
+  .loginButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 16px;
+  }
+  
+  .loginButton:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Additional styles for missing components */
+  .subtitle {
+    color: #718096;
+    margin-top: 4px;
+    font-size: 16px;
+  }
+  
+  /* Calendar icon - was referenced but missing */
+  .FiCalendar {
+    margin-right: 8px;
+    font-size: 16px;
+  }
+
+  /* In your dashboardStyles.module.css */
+.disabledBtn {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* In dashboardStyles.module.css */
+.acceptRideBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: #10b981; /* Green color for accept action */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
+}
+
+.acceptRideBtn:hover {
+  background-color: #059669; /* Darker green on hover */
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(16, 185, 129, 0.3);
+}
+
+.acceptRideBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(16, 185, 129, 0.3);
+}
+
+.acceptRideBtn:disabled {
+  background-color: #d1d5db;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.7;
+}
+
+.actionIcon {
+  font-size: 18px;
+}
+
+/* Ride details button and action column */
+.rideColActions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.detailsBtn {
+  padding: 0.25rem 0.5rem;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background-color 0.2s ease;
+}
+
+.detailsBtn:hover {
+  background-color: #e0e0e0;
+}
+
+/* Ride details modal sections */
+.rideDetailsSection {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.rideDetailRow {
+  display: flex;
+  margin: 0.5rem 0;
+  align-items: flex-start;
+}
+
+.rideDetailLabel {
+  font-weight: bold;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #555;
+}
+
+.rideDetailValue {
+  flex: 1;
+}
+
+.passengersList {
+  margin: 0;
+  padding-left: 1.2rem;
+  list-style-type: circle;
+}
+
+.passengersList li {
+  margin-bottom: 0.3rem;
+}
+
+.noteBox {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #555;
+}
+
+.detailIcon {
+  color: #666;
+}
+
+/* Action buttons */
+.warningButton {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.warningButton:hover {
+  background-color: #e68a00;
+}
+
+.dangerButton {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.dangerButton:hover {
+  background-color: #d32f2f;
+}
+
+/* Make sure ride row has space for the action buttons */
+.rideRow {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #eaeaea;
+  background-color: #fff;
+  transition: background-color 0.2s ease;
+}
+
+.rideRow:hover {
+  background-color: #f9f9f9;
+}
+
+/* Modal header styles for details modal */
+.modalHeader h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+/* Ensure modal content has proper spacing */
+.modalContent {
+  padding: 1rem;
+  max-height: 70vh;
+  overflow-y: auto;
+}
