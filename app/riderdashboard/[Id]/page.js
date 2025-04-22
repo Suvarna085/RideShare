@@ -613,7 +613,7 @@ const handleSubmit = async (e) => {
                                 {myRides.length === 0 ? (
                                     <div className={dashboardStyles.emptyState}>
                                         <FiList className={dashboardStyles.emptyStateIcon} />
-                                        <p>You haven't created or joined any rides yet</p>
+                                        <p>You haven't created any rides yet</p>
                                     </div>
                                 ) : (
                                     <div className={dashboardStyles.ridesContainer}>
@@ -624,6 +624,7 @@ const handleSubmit = async (e) => {
                                             <div className={dashboardStyles.rideCol}>Time</div>
                                             <div className={dashboardStyles.rideCol}>Type</div>
                                             <div className={dashboardStyles.rideCol}>Status</div>
+                                            <div className={dashboardStyles.rideColSmall}>Detials</div>
                                         </div>
                                         
                                         {myRides.map((ride) => (
